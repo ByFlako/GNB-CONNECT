@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programar Cita - GNB Connect</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+  <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Feduportal5479back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.9"></script>
+  <script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+  </head>
+<body class="bg-background min-h-screen">
+    <!-- Navigation Header -->
+    <nav class="bg-white shadow-card border-b border-border-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                        <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/>
+                    </svg>
+                    <span class="text-xl font-semibold text-text-primary">GNB Connect</span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="dashboard_home.html" class="text-text-secondary hover:text-primary transition-colors">Panel Principal</a>
+                    <a href="payment_center.html" class="text-text-secondary hover:text-primary transition-colors">Pagos</a>
+                    <a href="appointment_scheduler.html" class="text-primary font-medium border-b-2 border-primary pb-1">Citas</a>
+                    <a href="academic_calendar.html" class="text-text-secondary hover:text-primary transition-colors">Calendario</a>
+                    <a href="school_information.html" class="text-text-secondary hover:text-primary transition-colors">Información</a>
+                    <a href="student_portal.html" class="text-text-secondary hover:text-primary transition-colors">Portal Estudiante</a>
+                </div>
+
+                <!-- User Profile -->
+                <div class="flex items-center">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=150&auto=format&fit=crop" alt="Perfil de usuario" class="h-8 w-8 rounded-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <span class="ml-2 text-sm font-medium text-text-primary hidden sm:block">María González</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Header Section -->
+        <div class="mb-8">
+            <h1 class="text-headline text-text-primary mb-2">Programar Cita Psicológica</h1>
+            <p class="text-subheadline text-text-secondary">Reserva una consulta con nuestro equipo de psicología escolar</p>
+        </div>
+
+        <!-- Emergency Alert -->
+        <div class="mb-8">
+            <div class="bg-error-50 border-l-4 border-error rounded-lg p-4">
+                <div class="flex items-center">
+                    <svg class="h-5 w-5 text-error mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                    <div>
+                        <h3 class="text-sm font-medium text-error-800">¿Necesitas ayuda urgente?</h3>
+                        <p class="text-sm text-error-700">Para emergencias, llama al +34 900 123 456 o <button class="underline font-medium hover:text-error-900">programa una cita de emergencia</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <button class="card-elevated hover:shadow-elevated transition-all group text-left">
+                <div class="flex items-center">
+                    <div class="bg-primary-100 p-3 rounded-lg group-hover:bg-primary-200 transition-colors">
+                        <svg class="h-6 w-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-semibold text-text-primary">Consulta Inicial</h3>
+                        <p class="text-sm text-text-secondary">Primera evaluación - 60 min</p>
+                    </div>
+                </div>
+            </button>
+
+            <button class="card-elevated hover:shadow-elevated transition-all group text-left">
+                <div class="flex items-center">
+                    <div class="bg-accent-100 p-3 rounded-lg group-hover:bg-accent-200 transition-colors">
+                        <svg class="h-6 w-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-semibold text-text-primary">Seguimiento</h3>
+                        <p class="text-sm text-text-secondary">Sesión de seguimiento - 45 min</p>
+                    </div>
+                </div>
+            </button>
+
+            <button class="card-elevated hover:shadow-elevated transition-all group text-left border-2 border-error-200">
+                <div class="flex items-center">
+                    <div class="bg-error-100 p-3 rounded-lg group-hover:bg-error-200 transition-colors">
+                        <svg class="h-6 w-6 text-error" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-4">
+                        <h3 class="font-semibold text-text-primary">Emergencia</h3>
+                        <p class="text-sm text-text-secondary">Cita urgente - 30 min</p>
+                    </div>
+                </div>
+            </button>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column - Therapist Profiles -->
+            <div class="lg:col-span-2">
+                <div class="mb-6">
+                    <h2 class="text-lg font-semibold text-text-primary mb-4">Nuestro Equipo de Psicología</h2>
+                    
+                    <!-- Therapist Cards -->
+                    <div class="space-y-6">
+                        <!-- Therapist 1 -->
+                        <div class="card-elevated">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-32 md:h-32 w-full h-48 mb-4 md:mb-0 md:mr-6">
+                                    <img src="https://images.pexels.com/photos/5327585/pexels-photo-5327585.jpeg?auto=compress&cs=tinysrgb&w=300" alt="Dra. Carmen Martínez" class="w-full h-full object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-text-primary">Dra. Carmen Martínez</h3>
+                                            <p class="text-sm text-text-secondary">Psicóloga Clínica Infantil</p>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span class="status-success">Disponible</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <p class="text-sm text-text-secondary mb-2">Especialidades:</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="bg-primary-100 text-primary-700 px-2 py-1 rounded-full text-xs">Ansiedad Escolar</span>
+                                            <span class="bg-primary-100 text-primary-700 px-2 py-1 rounded-full text-xs">TDAH</span>
+                                            <span class="bg-primary-100 text-primary-700 px-2 py-1 rounded-full text-xs">Terapia Familiar</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <p class="text-sm text-text-secondary mb-1">Idiomas: Español, Inglés</p>
+                                        <p class="text-sm text-text-secondary">15 años de experiencia</p>
+                                    </div>
+
+                                    <div class="flex flex-col sm:flex-row gap-2">
+                                        <button class="btn-primary flex-1 text-sm py-2">Reservar Cita</button>
+                                        <button class="btn-secondary flex-1 text-sm py-2">Ver Perfil</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Therapist 2 -->
+                        <div class="card-elevated">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-32 md:h-32 w-full h-48 mb-4 md:mb-0 md:mr-6">
+                                    <img src="https://images.pixabay.com/photo/2017/03/01/22/18/avatar-2109804_960_720.png" alt="Dr. Miguel Rodríguez" class="w-full h-full object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-text-primary">Dr. Miguel Rodríguez</h3>
+                                            <p class="text-sm text-text-secondary">Psicólogo Educativo</p>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span class="status-warning">Ocupado hasta 15:00</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <p class="text-sm text-text-secondary mb-2">Especialidades:</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="bg-accent-100 text-accent-700 px-2 py-1 rounded-full text-xs">Dificultades de Aprendizaje</span>
+                                            <span class="bg-accent-100 text-accent-700 px-2 py-1 rounded-full text-xs">Orientación Vocacional</span>
+                                            <span class="bg-accent-100 text-accent-700 px-2 py-1 rounded-full text-xs">Bullying</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <p class="text-sm text-text-secondary mb-1">Idiomas: Español, Catalán</p>
+                                        <p class="text-sm text-text-secondary">12 años de experiencia</p>
+                                    </div>
+
+                                    <div class="flex flex-col sm:flex-row gap-2">
+                                        <button class="btn-primary flex-1 text-sm py-2">Reservar Cita</button>
+                                        <button class="btn-secondary flex-1 text-sm py-2">Ver Perfil</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Therapist 3 -->
+                        <div class="card-elevated">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-32 md:h-32 w-full h-48 mb-4 md:mb-0 md:mr-6">
+                                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=300&auto=format&fit=crop" alt="Dra. Ana López" class="w-full h-full object-cover rounded-lg" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-start mb-3">
+                                        <div>
+                                            <h3 class="text-lg font-semibold text-text-primary">Dra. Ana López</h3>
+                                            <p class="text-sm text-text-secondary">Psicóloga Adolescente</p>
+                                        </div>
+                                        <div class="flex items-center">
+                                            <span class="status-success">Disponible</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mb-3">
+                                        <p class="text-sm text-text-secondary mb-2">Especialidades:</p>
+                                        <div class="flex flex-wrap gap-2">
+                                            <span class="bg-success-100 text-success-700 px-2 py-1 rounded-full text-xs">Autoestima</span>
+                                            <span class="bg-success-100 text-success-700 px-2 py-1 rounded-full text-xs">Trastornos del Estado de Ánimo</span>
+                                            <span class="bg-success-100 text-success-700 px-2 py-1 rounded-full text-xs">Habilidades Sociales</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <p class="text-sm text-text-secondary mb-1">Idiomas: Español, Francés, Inglés</p>
+                                        <p class="text-sm text-text-secondary">8 años de experiencia</p>
+                                    </div>
+
+                                    <div class="flex flex-col sm:flex-row gap-2">
+                                        <button class="btn-primary flex-1 text-sm py-2">Reservar Cita</button>
+                                        <button class="btn-secondary flex-1 text-sm py-2">Ver Perfil</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Calendar & Booking -->
+            <div class="space-y-6">
+<!-- Calendar Widget -->
+<div class="card-elevated">
+    <div class="flex items-center justify-between mb-4">
+        <h3 class="text-lg font-semibold text-text-primary calendar-month-title">Octubre 2025</h3>
+        <div class="flex space-x-2">
+            <button class="calendar-prev-btn p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Mes anterior">
+                <svg class="h-4 w-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <button class="calendar-next-btn p-2 hover:bg-gray-100 rounded-lg transition-colors" title="Mes siguiente">
+                <svg class="h-4 w-4 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Calendar Grid -->
+    <div class="calendar-grid grid grid-cols-7 gap-1 mb-4">
+        <!-- Day Headers -->
+        <div class="text-center text-xs font-medium text-text-secondary p-2">L</div>
+        <div class="text-center text-xs font-medium text-text-secondary p-2">M</div>
+        <div class="text-center text-xs font-medium text-text-secondary p-2">X</div>
+        <div class="text-center text-xs font-medium text-text-secondary p-2">J</div>
+        <div class="text-center text-xs font-medium text-text-secondary p-2">V</div>
+        <div class="text-center text-xs font-medium text-text-secondary p-2">S</div>
+        <div class="text-center text-xs font-medium text-text-secondary p-2">D</div>
+        
+        <!-- Calendar days will be dynamically generated by JavaScript -->
+    </div>
+
+    <!-- Legend -->
+    <div class="text-xs text-text-secondary space-y-1">
+        <div class="flex items-center">
+            <div class="w-3 h-3 bg-primary rounded-full mr-2"></div>
+            <span>Hoy</span>
+        </div>
+        <div class="flex items-center">
+            <div class="w-3 h-3 bg-accent-100 rounded-full mr-2"></div>
+            <span>Citas programadas</span>
+        </div>
+        <div class="flex items-center">
+            <div class="w-3 h-3 bg-success-100 rounded-full mr-2"></div>
+            <span>Disponible</span>
+        </div>
+    </div>
+</div>
+
+<!-- Available Time Slots -->
+<div class="card-elevated">
+    <h3 class="text-lg font-semibold text-text-primary mb-4 time-slots-title">Horarios Disponibles - 1 Oct</h3>
+    <div class="space-y-2">
+        <button class="w-full text-left p-3 border border-border rounded-lg hover:border-primary hover:bg-primary-50 transition-colors">
+            <div class="flex justify-between items-center">
+                <span class="font-medium text-text-primary">09:00 - 10:00</span>
+                <span class="text-sm text-success">Disponible</span>
+            </div>
+            <p class="text-sm text-text-secondary">Dra. Carmen Martínez</p>
+        </button>
+
+        <button class="w-full text-left p-3 border border-border rounded-lg hover:border-primary hover:bg-primary-50 transition-colors">
+            <div class="flex justify-between items-center">
+                <span class="font-medium text-text-primary">11:30 - 12:30</span>
+                <span class="text-sm text-success">Disponible</span>
+            </div>
+            <p class="text-sm text-text-secondary">Dra. Ana López</p>
+        </button>
+
+        <button class="w-full text-left p-3 border border-border rounded-lg hover:border-primary hover:bg-primary-50 transition-colors">
+            <div class="flex justify-between items-center">
+                <span class="font-medium text-text-primary">15:00 - 16:00</span>
+                <span class="text-sm text-success">Disponible</span>
+            </div>
+            <p class="text-sm text-text-secondary">Dr. Miguel Rodríguez</p>
+        </button>
+
+        <div class="w-full text-left p-3 border border-border-light rounded-lg bg-gray-50">
+            <div class="flex justify-between items-center">
+                <span class="font-medium text-text-secondary">16:30 - 17:30</span>
+                <span class="text-sm text-text-secondary">Ocupado</span>
+            </div>
+            <p class="text-sm text-text-secondary">Dra. Carmen Martínez</p>
+        </div>
+    </div>
+</div>
+
+                <!-- Quick Booking Form -->
+                <div class="card-elevated">
+                    <h3 class="text-lg font-semibold text-text-primary mb-4">Reserva Rápida</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="form-label">Tipo de Cita</label>
+                            <select class="form-input">
+                                <option>Consulta Inicial</option>
+                                <option>Seguimiento</option>
+                                <option>Emergencia</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="form-label">Estudiante</label>
+                            <select class="form-input">
+                                <option>Carlos González (5º Primaria)</option>
+                                <option>Sofía González (2º ESO)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="form-label">Modalidad</label>
+                            <div class="flex space-x-4">
+                                <label class="flex items-center">
+                                    <input type="radio" name="modalidad" value="presencial" class="mr-2" checked />
+                                    <span class="text-sm">Presencial</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="radio" name="modalidad" value="virtual" class="mr-2" />
+                                    <span class="text-sm">Virtual</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="form-label">Motivo de la consulta</label>
+                            <textarea class="form-input h-20 resize-none" placeholder="Describe brevemente el motivo de la consulta..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full">Confirmar Cita</button>
+                    </form>
+                </div>
+
+                <!-- Calendar Integration -->
+                <div class="card-elevated">
+                    <h3 class="text-lg font-semibold text-text-primary mb-4">Sincronizar Calendario</h3>
+                    <div class="space-y-3">
+                        <button class="w-full flex items-center justify-center p-3 border border-border rounded-lg hover:bg-gray-50 transition-colors">
+                            <svg class="h-5 w-5 mr-2 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                                <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                                <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                                <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                            </svg>
+                            <span>Google Calendar</span>
+                        </button>
+
+                        <button class="w-full flex items-center justify-center p-3 border border-border rounded-lg hover:bg-gray-50 transition-colors">
+                            <svg class="h-5 w-5 mr-2 text-blue-700" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M7.75 12.412c0 .357.092.703.253 1.007l.16.304c.169.32.412.596.707.806.295.21.64.334 1.005.361.365.027.733-.05 1.072-.224.339-.174.64-.43.877-.746.237-.316.405-.684.489-1.072.084-.388.082-.792-.006-1.179-.088-.387-.26-.751-.501-1.061-.241-.31-.548-.558-.894-.722-.346-.164-.727-.241-1.109-.224-.382.017-.756.122-1.089.306-.333.184-.621.442-.844.752-.223.31-.378.665-.456 1.035-.078.37-.078.753 0 1.123l.336-.366z"/>
+                            </svg>
+                            <span>Outlook</span>
+                        </button>
+
+                        <button class="w-full flex items-center justify-center p-3 border border-border rounded-lg hover:bg-gray-50 transition-colors">
+                            <svg class="h-5 w-5 mr-2 text-gray-800" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                            <span>Apple Calendar</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- My Appointments Section -->
+        <div class="mt-12">
+            <h2 class="text-lg font-semibold text-text-primary mb-6">Mis Citas Programadas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Upcoming Appointment -->
+                <div class="card-elevated border-l-4 border-l-primary">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-text-primary">Consulta de Seguimiento</h3>
+                            <p class="text-sm text-text-secondary">Carlos González - 5º Primaria</p>
+                        </div>
+                        <span class="status-success">Confirmada</span>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-sm text-text-secondary">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span>Viernes, 4 de octubre - 10:00</span>
+                        </div>
+                        <div class="flex items-center text-sm text-text-secondary">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            <span>Dra. Carmen Martínez</span>
+                        </div>
+                        <div class="flex items-center text-sm text-text-secondary">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            <span>Despacho 201 - Presencial</span>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-2">
+                        <button class="btn-secondary flex-1 text-sm py-2">Reprogramar</button>
+                        <button class="btn-primary flex-1 text-sm py-2">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <!-- Past Appointment -->
+                <div class="card-elevated opacity-75">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <h3 class="font-semibold text-text-primary">Consulta Inicial</h3>
+                            <p class="text-sm text-text-secondary">Carlos González - 5º Primaria</p>
+                        </div>
+                        <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-sm font-medium">Completada</span>
+                    </div>
+                    
+                    <div class="space-y-2 mb-4">
+                        <div class="flex items-center text-sm text-text-secondary">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span>Lunes, 23 de septiembre - 15:30</span>
+                        </div>
+                        <div class="flex items-center text-sm text-text-secondary">
+                            <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                            </svg>
+                            <span>Dra. Carmen Martínez</span>
+                        </div>
+                    </div>
+
+                    <div class="flex space-x-2">
+                        <button class="btn-secondary flex-1 text-sm py-2">Ver Informe</button>
+                        <button class="btn-primary flex-1 text-sm py-2">Nueva Cita</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Navigation -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-border-light">
+        <div class="grid grid-cols-4 gap-1 p-2">
+            <a href="dashboard_home.html" class="flex flex-col items-center p-2 text-text-secondary">
+                <svg class="h-5 w-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                </svg>
+                <span class="text-xs">Inicio</span>
+            </a>
+            <a href="payment_center.html" class="flex flex-col items-center p-2 text-text-secondary">
+                <svg class="h-5 w-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                </svg>
+                <span class="text-xs">Pagos</span>
+            </a>
+            <a href="appointment_scheduler.html" class="flex flex-col items-center p-2 text-primary">
+                <svg class="h-5 w-5 mb-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-xs">Citas</span>
+            </a>
+            <a href="student_portal.html" class="flex flex-col items-center p-2 text-text-secondary">
+                <svg class="h-5 w-5 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                </svg>
+                <span class="text-xs">Estudiante</span>
+            </a>
+        </div>
+    </div>
+<script>
+class CalendarWidget {
+    constructor() {
+        this.currentDate = new Date();
+        this.today = new Date();
+        this.selectedDate = null;
+        this.monthNames = [
+            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+        ];
+        this.dayNames = ['L', 'M', 'X', 'J', 'V', 'S', 'D'];
+        this.appointmentData = this.generateMockAppointments();
+        
+        this.init();
+    }
+
+    init() {
+        this.bindEventListeners();
+        this.renderCalendar();
+    }
+
+    bindEventListeners() {
+        const prevBtn = document.querySelector('.calendar-prev-btn');
+        const nextBtn = document.querySelector('.calendar-next-btn');
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => this.navigateToPreviousMonth());
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => this.navigateToNextMonth());
+        }
+    }
+
+    navigateToPreviousMonth() {
+        this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+        this.appointmentData = this.generateMockAppointments();
+        this.renderCalendar();
+        this.updateTimeSlots();
+    }
+
+    navigateToNextMonth() {
+        this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+        this.appointmentData = this.generateMockAppointments();
+        this.renderCalendar();
+        this.updateTimeSlots();
+    }
+
+    generateMockAppointments() {
+        const appointments = {};
+        const currentMonth = this.currentDate.getMonth();
+        const currentYear = this.currentDate.getFullYear();
+        
+        // Generate appointments for previous month (last few days)
+        const prevMonth = currentMonth - 1;
+        const prevYear = prevMonth < 0 ? currentYear - 1 : currentYear;
+        const prevMonthAdjusted = prevMonth < 0 ? 11 : prevMonth;
+        
+        [26, 28, 30].forEach(day => {
+            const dateKey = `${prevYear}-${prevMonthAdjusted}-${day}`;
+            appointments[dateKey] = {
+                hasAppointment: true,
+                isAvailable: day % 2 === 0
+            };
+        });
+        
+        // Generate appointments for current month
+        const currentMonthDates = [3, 7, 12, 15, 18, 22, 25, 28];
+        currentMonthDates.forEach(day => {
+            const dateKey = `${currentYear}-${currentMonth}-${day}`;
+            appointments[dateKey] = {
+                hasAppointment: true,
+                isAvailable: day % 2 === 0
+            };
+        });
+        
+        // Generate appointments for next month (first few days)
+        const nextMonth = currentMonth + 1;
+        const nextYear = nextMonth > 11 ? currentYear + 1 : currentYear;
+        const nextMonthAdjusted = nextMonth > 11 ? 0 : nextMonth;
+        
+        [2, 5, 8].forEach(day => {
+            const dateKey = `${nextYear}-${nextMonthAdjusted}-${day}`;
+            appointments[dateKey] = {
+                hasAppointment: true,
+                isAvailable: day % 2 === 0
+            };
+        });
+        
+        return appointments;
+    }
+
+    getDaysInMonth(date) {
+        return new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+    }
+
+    getFirstDayOfMonth(date) {
+        const firstDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay();
+        return firstDay === 0 ? 6 : firstDay - 1; // Convert Sunday (0) to 6, Monday (1) to 0, etc.
+    }
+
+    isToday(day, month, year) {
+        return this.today.getDate() === day && 
+               this.today.getMonth() === month && 
+               this.today.getFullYear() === year;
+    }
+
+    hasAppointment(day, month, year) {
+        const dateKey = `${year}-${month}-${day}`;
+        return this.appointmentData[dateKey]?.hasAppointment || false;
+    }
+
+    isAvailable(day, month, year) {
+        const dateKey = `${year}-${month}-${day}`;
+        return this.appointmentData[dateKey]?.isAvailable || false;
+    }
+
+    isDateInPast(day, month, year) {
+        const checkDate = new Date(year, month, day);
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        return checkDate < today;
+    }
+
+    renderCalendar() {
+        const monthTitle = document.querySelector('.calendar-month-title');
+        const calendarGrid = document.querySelector('.calendar-grid');
+        
+        if (!monthTitle || !calendarGrid) return;
+
+        // Update month title
+        monthTitle.textContent = `${this.monthNames[this.currentDate.getMonth()]} ${this.currentDate.getFullYear()}`;
+
+        // Clear existing calendar days (keep headers)
+        const dayElements = calendarGrid.querySelectorAll('.calendar-day');
+        dayElements.forEach(el => el.remove());
+
+        const daysInMonth = this.getDaysInMonth(this.currentDate);
+        const firstDay = this.getFirstDayOfMonth(this.currentDate);
+        
+        // Add previous month's trailing days
+        const prevMonth = new Date(this.currentDate.getFullYear(), this.currentDate.getMonth() - 1, 0);
+        const prevMonthDays = prevMonth.getDate();
+        const prevMonthNum = this.currentDate.getMonth() - 1;
+        const prevYear = prevMonthNum < 0 ? this.currentDate.getFullYear() - 1 : this.currentDate.getFullYear();
+        const prevMonthAdjusted = prevMonthNum < 0 ? 11 : prevMonthNum;
+        
+        for (let i = firstDay - 1; i >= 0; i--) {
+            const day = prevMonthDays - i;
+            const dayElement = this.createDayElement(day, prevMonthAdjusted, prevYear, 'prev');
+            calendarGrid.appendChild(dayElement);
+        }
+
+        // Add current month's days
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayElement = this.createDayElement(day, this.currentDate.getMonth(), this.currentDate.getFullYear(), 'current');
+            calendarGrid.appendChild(dayElement);
+        }
+
+        // Add next month's leading days to fill the grid
+        const totalCells = calendarGrid.children.length - 7; // Subtract header row
+        const remainingCells = 35 - totalCells; // Aim for 5 rows of days (35 cells)
+        const nextMonthNum = this.currentDate.getMonth() + 1;
+        const nextYear = nextMonthNum > 11 ? this.currentDate.getFullYear() + 1 : this.currentDate.getFullYear();
+        const nextMonthAdjusted = nextMonthNum > 11 ? 0 : nextMonthNum;
+        
+        for (let day = 1; day <= remainingCells; day++) {
+            const dayElement = this.createDayElement(day, nextMonthAdjusted, nextYear, 'next');
+            calendarGrid.appendChild(dayElement);
+        }
+    }
+
+    createDayElement(day, month, year, type) {
+        const dayElement = document.createElement('div');
+        dayElement.classList.add('calendar-day', 'text-center', 'text-sm', 'p-2', 'cursor-pointer', 'transition-colors', 'min-h-8', 'flex', 'items-center', 'justify-center');
+        dayElement.textContent = day;
+        dayElement.dataset.day = day;
+        dayElement.dataset.month = month;
+        dayElement.dataset.year = year;
+        dayElement.dataset.type = type;
+
+        const isInPast = this.isDateInPast(day, month, year);
+        
+        if (type === 'prev' || type === 'next') {
+            dayElement.classList.add('text-text-secondary', 'opacity-60');
+            if (this.hasAppointment(day, month, year)) {
+                dayElement.classList.add('bg-gray-200', 'rounded');
+            } else if (!isInPast) {
+                dayElement.classList.add('hover:bg-gray-100', 'rounded');
+            }
+        } else {
+            // Current month
+            if (this.isToday(day, month, year)) {
+                dayElement.classList.add('bg-primary', 'text-white', 'rounded-full', 'font-medium');
+            } else if (this.hasAppointment(day, month, year)) {
+                dayElement.classList.add('bg-accent-100', 'text-accent-700', 'rounded', 'font-medium');
+            } else if (this.isAvailable(day, month, year) && !isInPast) {
+                dayElement.classList.add('bg-success-100', 'text-success-700', 'rounded', 'hover:bg-success-200');
+            } else if (!isInPast) {
+                dayElement.classList.add('hover:bg-gray-100', 'rounded');
+            }
+        }
+
+        // Add past date styling
+        if (isInPast) {
+            dayElement.classList.add('text-text-secondary', 'opacity-50', 'cursor-not-allowed');
+            dayElement.style.pointerEvents = 'none';
+        } else {
+            // Add click event for non-past dates
+            dayElement.addEventListener('click', (e) => this.selectDay(e.target));
+        }
+
+        return dayElement;
+    }
+
+    selectDay(dayElement) {
+        const day = parseInt(dayElement.dataset.day);
+        const month = parseInt(dayElement.dataset.month);
+        const year = parseInt(dayElement.dataset.year);
+        const type = dayElement.dataset.type;
+        
+        // If clicking on previous/next month day, navigate to that month
+        if (type === 'prev') {
+            this.currentDate.setMonth(this.currentDate.getMonth() - 1);
+            this.appointmentData = this.generateMockAppointments();
+            this.renderCalendar();
+            // Select the day after re-rendering
+            setTimeout(() => {
+                const newDayElement = document.querySelector(`[data-day="${day}"][data-month="${month}"][data-year="${year}"][data-type="current"]`);
+                if (newDayElement) {
+                    this.selectCurrentMonthDay(newDayElement, day, month, year);
+                }
+            }, 10);
+            return;
+        } else if (type === 'next') {
+            this.currentDate.setMonth(this.currentDate.getMonth() + 1);
+            this.appointmentData = this.generateMockAppointments();
+            this.renderCalendar();
+            // Select the day after re-rendering
+            setTimeout(() => {
+                const newDayElement = document.querySelector(`[data-day="${day}"][data-month="${month}"][data-year="${year}"][data-type="current"]`);
+                if (newDayElement) {
+                    this.selectCurrentMonthDay(newDayElement, day, month, year);
+                }
+            }, 10);
+            return;
+        }
+        
+        this.selectCurrentMonthDay(dayElement, day, month, year);
+    }
+    
+    selectCurrentMonthDay(dayElement, day, month, year) {
+        // Remove previous selection
+        document.querySelectorAll('.calendar-day.selected').forEach(el => {
+            el.classList.remove('selected', 'ring-2', 'ring-primary', 'ring-offset-1');
+        });
+
+        // Add selection to clicked day
+        dayElement.classList.add('selected', 'ring-2', 'ring-primary', 'ring-offset-1');
+        
+        // Store selected date
+        this.selectedDate = { day, month, year };
+        
+        // Update time slots for selected day
+        this.updateTimeSlotsForDay(day, month, year);
+        
+        // Update booking form if it exists
+        this.updateBookingForm(day, month, year);
+    }
+
+    updateTimeSlots() {
+        // Update the time slots section when month changes
+        const timeSlotsTitle = document.querySelector('.time-slots-title');
+        if (timeSlotsTitle) {
+            timeSlotsTitle.textContent = `Horarios Disponibles - ${this.monthNames[this.currentDate.getMonth()]} ${this.currentDate.getFullYear()}`;
+        }
+    }
+
+    updateTimeSlotsForDay(day, month, year) {
+        const timeSlotsTitle = document.querySelector('.time-slots-title');
+        if (timeSlotsTitle) {
+            const monthName = this.monthNames[month];
+            timeSlotsTitle.textContent = `Horarios Disponibles - ${day} ${monthName} ${year}`;
+        }
+
+        // Update time slots based on availability for selected day
+        this.generateTimeSlotsForDate(day, month, year);
+    }
+    
+    generateTimeSlotsForDate(day, month, year) {
+        const timeSlotsContainer = document.querySelector('.card-elevated').nextElementSibling;
+        if (!timeSlotsContainer) return;
+        
+        const slotsDiv = timeSlotsContainer.querySelector('.space-y-2');
+        if (!slotsDiv) return;
+        
+        // Clear existing slots
+        slotsDiv.innerHTML = '';
+        
+        // Generate sample time slots based on the selected date
+        const slots = this.getAvailableTimeSlots(day, month, year);
+        
+        slots.forEach(slot => {
+            const slotElement = document.createElement('button');
+            slotElement.className = slot.available ? 
+                'w-full text-left p-3 border border-border rounded-lg hover:border-primary hover:bg-primary-50 transition-colors appointment-slot' :
+                'w-full text-left p-3 border border-border-light rounded-lg bg-gray-50 cursor-not-allowed';
+                
+            slotElement.innerHTML = `
+                <div class="flex justify-between items-center">
+                    <span class="font-medium ${slot.available ? 'text-text-primary' : 'text-text-secondary'}">${slot.time}</span>
+                    <span class="text-sm ${slot.available ? 'text-success' : 'text-text-secondary'}">${slot.status}</span>
+                </div>
+                <p class="text-sm text-text-secondary">${slot.therapist}</p>
+            `;
+            
+            if (slot.available) {
+                slotElement.addEventListener('click', () => this.selectTimeSlot(slot, day, month, year));
+            }
+            
+            slotsDiv.appendChild(slotElement);
+        });
+    }
+    
+    getAvailableTimeSlots(day, month, year) {
+        // Generate different time slots based on the day of week and date
+        const dayOfWeek = new Date(year, month, day).getDay();
+        const therapists = ['Dra. Carmen Martínez', 'Dr. Miguel Rodríguez', 'Dra. Ana López'];
+        
+        const baseSlots = [
+            { time: '09:00 - 10:00', therapist: therapists[0] },
+            { time: '10:30 - 11:30', therapist: therapists[1] },
+            { time: '11:30 - 12:30', therapist: therapists[2] },
+            { time: '14:00 - 15:00', therapist: therapists[0] },
+            { time: '15:00 - 16:00', therapist: therapists[1] },
+            { time: '16:30 - 17:30', therapist: therapists[2] }
+        ];
+        
+        return baseSlots.map((slot, index) => ({
+            ...slot,
+            available: dayOfWeek !== 0 && dayOfWeek !== 6 && (index + day) % 3 !== 0, // Make some unavailable
+            status: (dayOfWeek !== 0 && dayOfWeek !== 6 && (index + day) % 3 !== 0) ? 'Disponible' : 'Ocupado'
+        }));
+    }
+    
+    selectTimeSlot(slot, day, month, year) {
+        // Remove previous selection
+        document.querySelectorAll('.appointment-slot.selected').forEach(el => {
+            el.classList.remove('selected', 'ring-2', 'ring-primary', 'bg-primary-100');
+        });
+        
+        // Add selection to clicked slot
+        event.target.closest('.appointment-slot').classList.add('selected', 'ring-2', 'ring-primary', 'bg-primary-100');
+        
+        // Update booking form with selected appointment details
+        this.updateBookingFormWithSlot(slot, day, month, year);
+    }
+    
+    updateBookingForm(day, month, year) {
+        // This can be expanded to update any booking form fields
+        console.log(`Selected date: ${day}/${month + 1}/${year}`);
+    }
+    
+    updateBookingFormWithSlot(slot, day, month, year) {
+        console.log(`Selected appointment: ${slot.time} on ${day}/${month + 1}/${year} with ${slot.therapist}`);
+        
+        // Here you could update form fields, show confirmation dialog, etc.
+        // For example, auto-fill the booking form with the selected details
+    }
+}
+
+// Initialize calendar when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    new CalendarWidget();
+});
+</script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
